@@ -1,7 +1,5 @@
 import Footer from "@/components/common/footer";
 import Navbar from "@/components/common/navbar";
-import PWAInstallPrompt from "@/components/pwa/PWAInstallPrompt";
-import PWAStatusIndicator from "@/components/pwa/PWAStatusIndicator";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import type { Metadata, Viewport } from "next";
@@ -22,12 +20,6 @@ export const metadata: Metadata = {
   title: "EservOne - Global Service Platform",
   description:
     "Connect with trusted service providers for all your needs. From beauty and wellness to home repairs - all in one platform.",
-  manifest: "/manifest.json",
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "default",
-    title: "EservOne",
-  },
   formatDetection: {
     telephone: false,
   },
@@ -63,11 +55,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="icon" href="/assets/icons/logo.svg" />
         <meta name="theme-color" content="#3E3F93" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -82,11 +71,9 @@ export default function RootLayout({
         >
           <div className="fixed top-4 right-4 z-[60] flex items-center space-x-3">
             <ModeToggle />
-            <PWAStatusIndicator />
           </div>
           <Navbar />
           {children}
-          <PWAInstallPrompt />
           <Footer />
         </ThemeProvider>
       </body>
