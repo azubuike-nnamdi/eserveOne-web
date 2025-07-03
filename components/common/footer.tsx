@@ -1,4 +1,4 @@
-import { eservoneLogo } from '@/config/icons';
+import { logo } from '@/config/images';
 import Image from 'next/image';
 
 export default function Footer() {
@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex ">
-                <Image src={eservoneLogo} alt="EservOne Logo" width={200} height={100} />
+                <Image src={logo} alt="EservOne Logo" width={200} height={100} />
               </div>
               <p className="text-muted-foreground text-sm">
                 Connecting service providers with customers for quality, affordable services worldwide.
