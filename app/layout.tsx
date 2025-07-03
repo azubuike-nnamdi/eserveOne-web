@@ -1,3 +1,4 @@
+import Footer from "@/components/common/footer";
 import Navbar from "@/components/common/navbar";
 import PWAInstallPrompt from "@/components/pwa/PWAInstallPrompt";
 import PWAStatusIndicator from "@/components/pwa/PWAStatusIndicator";
@@ -76,6 +77,7 @@ export default function RootLayout({
         {children}
         <PWAInstallPrompt />
         <PWAStatusIndicator />
+        <Footer />
       </body>
     </html>
   );
