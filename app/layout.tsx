@@ -1,6 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/common/navbar";
+import PWAInstallPrompt from "@/components/pwa/PWAInstallPrompt";
+import PWAStatusIndicator from "@/components/pwa/PWAStatusIndicator";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,7 +20,6 @@ export const metadata: Metadata = {
   description:
     "Connect with trusted service providers for all your needs. From beauty and wellness to home repairs - all in one platform.",
   manifest: "/manifest.json",
-  themeColor: "#3E3F93",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
@@ -37,12 +39,14 @@ export const metadata: Metadata = {
     title: "EservOne - Global Service Platform",
     description: "Connect with trusted service providers for all your needs.",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-  },
+}
+
+export const viewport: Viewport = {
+  themeColor: "#3E3F93",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 }
 
 export default function RootLayout({
@@ -54,8 +58,12 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
       >
+        <Navbar />
         {children}
+        <PWAInstallPrompt />
+        <PWAStatusIndicator />
       </body>
     </html>
   );
