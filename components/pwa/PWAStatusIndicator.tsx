@@ -1,15 +1,15 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { usePWA } from '@/hooks/usePWA';
 import {
-  Wifi,
-  WifiOff,
   Bell,
+  Settings,
   Smartphone,
-  Settings
+  Wifi,
+  WifiOff
 } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export default function PWAStatusIndicator() {
   const { isInstalled, isStandalone, isOnline, requestNotificationPermission, sendNotification } = usePWA();
@@ -38,7 +38,7 @@ export default function PWAStatusIndicator() {
   if (!mounted) return null;
 
   return (
-    <div className="fixed top-4 right-4 z-50">
+    <div>
       <div className="flex items-center space-x-2">
         {/* Online/Offline Status */}
         <div className="flex items-center space-x-1 px-2 py-1 rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700">
@@ -75,7 +75,7 @@ export default function PWAStatusIndicator() {
 
       {/* PWA Details Panel */}
       {showDetails && (
-        <div className="absolute top-12 right-0 w-80 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-4">
+        <div className="absolute top-12 right-0 w-80 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-4 z-50">
           <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
             PWA Settings
           </h3>

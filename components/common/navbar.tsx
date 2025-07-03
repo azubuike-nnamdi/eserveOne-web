@@ -1,7 +1,6 @@
+import { Info, PackageSearch, Search, Users } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
 import { Button } from '../ui/button'
-import { Home, Search, User, Users } from 'lucide-react'
 
 const navbar = () => {
   return (
@@ -39,6 +38,7 @@ const navbar = () => {
             <Button className="bg-white text-gray-900 hover:bg-gray-100 rounded-full px-6 py-2 text-sm font-medium">
               Get Started
             </Button>
+
           </div>
         </nav>
       </header>
@@ -47,11 +47,11 @@ const navbar = () => {
       <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white rounded-t-3xl shadow-lg border-t border-gray-100">
         <div className="flex items-center justify-around py-4 px-6">
           <Link
-            href="#"
+            href="#features"
             className="flex flex-col items-center space-y-1 text-gray-600 hover:text-primary transition-colors"
           >
-            <Home className="h-6 w-6" />
-            <span className="text-xs font-medium">Home</span>
+            <PackageSearch className="h-6 w-6" />
+            <span className="text-xs font-medium">Features</span>
           </Link>
           <Link
             href="#services"
@@ -65,14 +65,14 @@ const navbar = () => {
             className="flex flex-col items-center space-y-1 text-gray-600 hover:text-primary transition-colors"
           >
             <Users className="h-6 w-6" />
-            <span className="text-xs font-medium">Providers</span>
+            <span className="text-xs font-medium">How It Works</span>
           </Link>
           <Link
             href="#support"
             className="flex flex-col items-center space-y-1 text-gray-600 hover:text-primary transition-colors"
           >
-            <User className="h-6 w-6" />
-            <span className="text-xs font-medium">Profile</span>
+            <Info className="h-6 w-6" />
+            <span className="text-xs font-medium">About</span>
           </Link>
         </div>
       </nav>
