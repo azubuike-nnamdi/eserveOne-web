@@ -57,6 +57,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/assets/icons/logo.svg" />
         <meta name="theme-color" content="#3E3F93" />
+        <meta name="google-site-verification" content="BzI6kTg2F5Q5omo0y30PzK5KJOYDZHfKso9blj7PHc8" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
