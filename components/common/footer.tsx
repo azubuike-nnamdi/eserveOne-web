@@ -1,5 +1,6 @@
 import { logo } from '@/config/images';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -41,6 +42,7 @@ export default function Footer() {
             <div>
               <h3 className="font-semibold text-foreground mb-4">Legal</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><Link href="/privacy/delete-account" className="hover:text-foreground transition-colors">Delete Account</Link></li>
                 <li>Privacy Policy</li>
                 <li>Terms of Service</li>
                 <li>Cookie Policy</li>
