@@ -1,3 +1,4 @@
+import BackToTop from "@/components/common/back-to-top";
 import Footer from "@/components/common/footer";
 import Navbar from "@/components/common/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -76,6 +77,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <BackToTop />
         </ThemeProvider>
       </body>
     </html>
