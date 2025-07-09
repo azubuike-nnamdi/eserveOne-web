@@ -1,6 +1,7 @@
 import BackToTop from "@/components/common/back-to-top";
 import Footer from "@/components/common/footer";
 import Navbar from "@/components/common/navbar";
+import CookieConsentModal from "@/components/cookie-consent-modal";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import type { Metadata, Viewport } from "next";
@@ -78,6 +79,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <BackToTop />
+          <CookieConsentModal />
         </ThemeProvider>
       </body>
     </html>
