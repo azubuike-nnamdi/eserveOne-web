@@ -43,9 +43,9 @@ export default function Footer() {
               <h3 className="font-semibold text-foreground mb-4">Legal</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><Link href="/privacy/delete-account" className="hover:text-foreground transition-colors">Delete Account</Link></li>
-                <li>Privacy Policy</li>
-                <li>Terms of Service</li>
-                <li>Cookie Policy</li>
+                <li><Link href="/privacy/policy" className="hover:text-foreground transition-colors">Privacy Policy</Link></li>
+                <li><Link href="/privacy/terms-of-service" className="hover:text-foreground transition-colors">Terms of Service</Link></li>
+                {/* <li><Link href="/privacy/cookie-policy" className="hover:text-foreground transition-colors">Cookie Policy</Link></li> */}
               </ul>
             </div>
           </div>

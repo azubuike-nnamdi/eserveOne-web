@@ -17,7 +17,7 @@ export default function LegalPageHeader({
   description,
   effectiveDate,
   icon: Icon,
-  iconColor = "text-blue-600"
+
 }: LegalPageHeaderProps) {
   return (
     <motion.div
