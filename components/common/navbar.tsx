@@ -1,6 +1,7 @@
 import { Info, PackageSearch, Search, Users } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { AnimatedLink } from '../ui/animated-link'
 import { Button } from '../ui/button'
 
 const navbar = () => {
@@ -16,21 +17,21 @@ const navbar = () => {
 
             {/* Navigation Links */}
             <div className="flex items-center space-x-6">
-              <Link href="#features" className="dark:text-white hover:text-gray-300 transition-colors text-sm font-medium">
+              <AnimatedLink href="#features" className="dark:text-white hover:text-gray-300 transition-colors text-sm font-medium">
                 Features
-              </Link>
-              <Link
+              </AnimatedLink>
+              <AnimatedLink
                 href="#services"
                 className="dark:text-white hover:text-gray-300 transition-colors text-sm font-medium"
               >
                 Services
-              </Link>
-              <Link href="#how-it-works" className="dark:text-white hover:text-gray-300 transition-colors text-sm font-medium">
+              </AnimatedLink>
+              <AnimatedLink href="#how-it-works" className="dark:text-white hover:text-gray-300 transition-colors text-sm font-medium">
                 How It Works
-              </Link>
-              <Link href="#about" className="dark:text-white hover:text-gray-300 transition-colors text-sm font-medium">
+              </AnimatedLink>
+              <AnimatedLink href="#about" className="dark:text-white hover:text-gray-300 transition-colors text-sm font-medium">
                 About
-              </Link>
+              </AnimatedLink>
             </div>
 
             {/* CTA Button */}

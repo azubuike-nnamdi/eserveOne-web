@@ -6,10 +6,12 @@ import { buttonTransition, buttonVariants } from '@/lib/animations';
 import { motion } from 'framer-motion';
 import { Download } from 'lucide-react';
 import Image from 'next/image';
+import { Spotlight } from '../ui/spotlight';
 
 const NowAvailable = () => {
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-900">
+      <Spotlight />
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -125,6 +127,8 @@ const NowAvailable = () => {
                 </motion.div>
               ))}
             </motion.div>
+
+
           </motion.div>
 
           {/* Right Content - Mobile Phone Mockup */}

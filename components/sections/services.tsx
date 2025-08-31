@@ -5,6 +5,7 @@ import { serviceCategories } from '@/data';
 import { containerVariants, statItemVariants } from '@/lib/animations';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { GlowingEffect } from '../ui/glowing-effect';
 
 export default function Services() {
 
@@ -28,7 +29,7 @@ export default function Services() {
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -39,26 +40,35 @@ export default function Services() {
                 key={category.title}
                 variants={statItemVariants}
                 custom={index}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3, ease: [0.42, 0, 0.58, 1] }}
+                className="h-full flex"
               >
-                <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer border-0 bg-card/50 backdrop-blur-sm h-full shadow-none">
-                  <CardHeader className="text-center">
-                    <motion.div
-                      className={`w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 dark:text-white ${category.color}`}
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <category.icon className="w-8 h-8" />
-                    </motion.div>
-                    <CardTitle className="text-lg">{category.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-center text-muted-foreground">
-                      {category.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
+                <div className="relative w-full rounded-lg">
+                  <GlowingEffect
+                    spread={30}
+                    glow={true}
+                    disabled={false}
+                    proximity={48}
+                    inactiveZone={0.1}
+                    variant="default"
+                    blur={1}
+                    borderWidth={2}
+                  />
+                  <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer border-0 bg-card/50 backdrop-blur-sm h-full shadow-none relative rounded-lg flex flex-col">
+                    <CardHeader className="text-center flex-shrink-0">
+                      <motion.div
+                        className={`w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 dark:text-white ${category.color}`}
+                      >
+                        <category.icon className="w-8 h-8" />
+                      </motion.div>
+                      <CardTitle className="text-lg">{category.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-1 flex flex-col justify-center">
+                      <CardDescription className="text-center text-muted-foreground">
+                        {category.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                </div>
               </motion.div>
             ))}
           </AnimatePresence>

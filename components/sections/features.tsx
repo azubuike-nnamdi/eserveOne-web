@@ -5,6 +5,7 @@ import { containerVariants, statItemVariants } from '@/lib/animations';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
+import { GlowingEffect } from '../ui/glowing-effect';
 
 export default function Features() {
   const ref = useRef(null);
@@ -40,26 +41,34 @@ export default function Features() {
                   key={feature.title}
                   variants={statItemVariants}
                   custom={index}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3, ease: [0.42, 0, 0.58, 1] }}
                 >
-                  <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm h-full">
-                    <CardHeader>
-                      <motion.div
-                        className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors"
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <feature.icon className="w-6 h-6 text-primary" />
-                      </motion.div>
-                      <CardTitle className="text-lg">{feature.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <CardDescription className="text-muted-foreground">
-                        {feature.description}
-                      </CardDescription>
-                    </CardContent>
-                  </Card>
+                  <div className="relative rounded-lg">
+                    <GlowingEffect
+                      spread={30}
+                      glow={true}
+                      disabled={false}
+                      proximity={48}
+                      inactiveZone={0.1}
+                      variant="default"
+                      blur={1}
+                      borderWidth={2}
+                    />
+                    <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm h-full relative rounded-lg">
+                      <CardHeader>
+                        <motion.div
+                          className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors"
+                        >
+                          <feature.icon className="w-6 h-6 text-primary" />
+                        </motion.div>
+                        <CardTitle className="text-lg">{feature.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription className="text-muted-foreground">
+                          {feature.description}
+                        </CardDescription>
+                      </CardContent>
+                    </Card>
+                  </div>
                 </motion.div>
               ))}
             </AnimatePresence>
