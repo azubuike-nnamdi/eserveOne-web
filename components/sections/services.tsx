@@ -42,10 +42,10 @@ export default function Services() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3, ease: [0.42, 0, 0.58, 1] }}
               >
-                <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer border-0 bg-card/50 backdrop-blur-sm h-full">
+                <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer border-0 bg-card/50 backdrop-blur-sm h-full shadow-none">
                   <CardHeader className="text-center">
                     <motion.div
-                      className={`w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 ${category.color}`}
+                      className={`w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 dark:text-white ${category.color}`}
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ duration: 0.2 }}
                     >
