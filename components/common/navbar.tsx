@@ -1,8 +1,10 @@
-import { Info, PackageSearch, Search, Users } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { AnimatedLink } from '../ui/animated-link'
-import { Button } from '../ui/button'
+"use client";
+
+import { Info, PackageSearch, Search, Users } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { AnimatedLink } from '../ui/animated-link';
+import { Button } from '../ui/button';
 
 const navbar = () => {
   return (
@@ -11,9 +13,11 @@ const navbar = () => {
         <nav className="dark:bg-gray-900 rounded-full px-6 py-3 shadow-lg backdrop-blur-sm">
           <div className="flex items-center space-x-8">
             {/* Logo */}
-            <div className="flex items-center space-x-2">
-              <Image src="/assets/images/eservone-logo.png" alt="Logo" width={130} height={100} />
-            </div>
+            <Link href="/">
+              <div className="flex items-center space-x-2">
+                <Image src="/assets/images/eservone-logo.png" alt="Logo" width={130} height={100} />
+              </div>
+            </Link>
 
             {/* Navigation Links */}
             <div className="flex items-center space-x-6">
@@ -29,7 +33,7 @@ const navbar = () => {
               <AnimatedLink href="#how-it-works" className="dark:text-white hover:text-gray-300 transition-colors text-sm font-medium">
                 How It Works
               </AnimatedLink>
-              <AnimatedLink href="#about" className="dark:text-white hover:text-gray-300 transition-colors text-sm font-medium">
+              <AnimatedLink href="/about" className="dark:text-white hover:text-gray-300 transition-colors text-sm font-medium">
                 About
               </AnimatedLink>
             </div>
