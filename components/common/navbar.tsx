@@ -1,12 +1,15 @@
 "use client";
 
-import { Info, PackageSearch, Search, Users } from 'lucide-react';
+import { Home, Info, Search, Users } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { AnimatedLink } from '../ui/animated-link';
 import { Button } from '../ui/button';
 
-const navbar = () => {
+const Navbar = () => {
+
+  const pathname = usePathname();
   return (
     <main>
       <header className="hidden md:block fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
@@ -21,20 +24,21 @@ const navbar = () => {
 
             {/* Navigation Links */}
             <div className="flex items-center space-x-6">
-              <AnimatedLink href="#features" className="dark:text-white hover:text-gray-300 transition-colors text-sm font-medium">
-                Features
+              <AnimatedLink href="/" className="dark:text-white  transition-colors text-sm font-medium">
+                Home
               </AnimatedLink>
-              <AnimatedLink
+              {pathname === "/" && <AnimatedLink
                 href="#services"
-                className="dark:text-white hover:text-gray-300 transition-colors text-sm font-medium"
+                className="dark:text-white  transition-colors text-sm font-medium"
               >
                 Services
+              </AnimatedLink>}
+
+              <AnimatedLink href="/about" className="dark:text-white  transition-colors text-sm font-medium">
+                About Us
               </AnimatedLink>
-              <AnimatedLink href="#how-it-works" className="dark:text-white hover:text-gray-300 transition-colors text-sm font-medium">
-                How It Works
-              </AnimatedLink>
-              <AnimatedLink href="/about" className="dark:text-white hover:text-gray-300 transition-colors text-sm font-medium">
-                About
+              <AnimatedLink href="/contact-us" className="dark:text-white  transition-colors text-sm font-medium">
+                Contact Us
               </AnimatedLink>
             </div>
 
@@ -51,32 +55,32 @@ const navbar = () => {
       <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white rounded-t-3xl shadow-lg border-t border-gray-100">
         <div className="flex items-center justify-around py-4 px-6">
           <Link
-            href="#features"
+            href="/"
             className="flex flex-col items-center space-y-1 dark:text-gray-600 hover:text-primary transition-colors"
           >
-            <PackageSearch className="h-6 w-6" />
-            <span className="text-xs font-medium">Features</span>
+            <Home className="h-6 w-6" />
+            <span className="text-xs font-medium">Home</span>
           </Link>
-          <Link
+          {pathname === "/" && <Link
             href="#services"
             className="flex flex-col items-center space-y-1 text-gray-600 hover:text-primary transition-colors"
           >
             <Search className="h-6 w-6" />
             <span className="text-xs font-medium">Services</span>
-          </Link>
+          </Link>}
           <Link
-            href="#how-it-works"
+            href="/about"
             className="flex flex-col items-center space-y-1 text-gray-600 hover:text-primary transition-colors"
           >
             <Users className="h-6 w-6" />
-            <span className="text-xs font-medium">How It Works</span>
+            <span className="text-xs font-medium">About</span>
           </Link>
           <Link
-            href="#support"
+            href="/contact-us"
             className="flex flex-col items-center space-y-1 text-gray-600 hover:text-primary transition-colors"
           >
             <Info className="h-6 w-6" />
-            <span className="text-xs font-medium">About</span>
+            <span className="text-xs font-medium">Contact Us</span>
           </Link>
         </div>
       </nav>
@@ -84,4 +88,4 @@ const navbar = () => {
   )
 }
 
-export default navbar
+export default Navbar

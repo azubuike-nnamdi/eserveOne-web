@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "EservOne - Global Service Platform",
   description:
-    "Connect with trusted service providers for all your needs. From beauty and wellness to home repairs - all in one platform.",
+    "At EservOne, we believe getting help and offering help should be easy, trusted and efficient. That’s why we created a platform that brings together people who need services with the skilled professionals who provide them. From home repairs and beauty services to tech support and event planning, our mission is to make everyday task easier by bridging the gap between service seekers and trusted providers in their community..",
   formatDetection: {
     telephone: false,
   },
@@ -29,12 +29,12 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "EservOne",
     title: "EservOne - Global Service Platform",
-    description: "Connect with trusted service providers for all your needs.",
+    description: "From home repairs and beauty services to tech support and event planning, our mission is to make everyday task easier by bridging the gap between service seekers and trusted providers in their community..",
   },
   twitter: {
     card: "summary",
     title: "EservOne - Global Service Platform",
-    description: "Connect with trusted service providers for all your needs.",
+    description: "From home repairs and beauty services to tech support and event planning, our mission is to make everyday task easier by bridging the gap between service seekers and trusted providers in their community..",
   },
   icons: {
     icon: '/assets/icons/logo.svg',
