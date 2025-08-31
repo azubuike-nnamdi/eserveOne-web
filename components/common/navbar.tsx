@@ -1,4 +1,5 @@
 import { Info, PackageSearch, Search, Users } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '../ui/button'
 
@@ -6,36 +7,34 @@ const navbar = () => {
   return (
     <main>
       <header className="hidden md:block fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
-        <nav className="bg-gray-900 rounded-full px-6 py-3 shadow-lg backdrop-blur-sm">
+        <nav className="dark:bg-gray-900 rounded-full px-6 py-3 shadow-lg backdrop-blur-sm">
           <div className="flex items-center space-x-8">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-full bg-white flex items-center justify-center">
-                <span className="text-primary font-bold text-sm">E1</span>
-              </div>
+              <Image src="/assets/images/eservone-logo.png" alt="Logo" width={130} height={100} />
             </div>
 
             {/* Navigation Links */}
             <div className="flex items-center space-x-6">
-              <Link href="#features" className="text-white hover:text-gray-300 transition-colors text-sm font-medium">
+              <Link href="#features" className="dark:text-white hover:text-gray-300 transition-colors text-sm font-medium">
                 Features
               </Link>
               <Link
                 href="#services"
-                className="text-white hover:text-gray-300 transition-colors text-sm font-medium"
+                className="dark:text-white hover:text-gray-300 transition-colors text-sm font-medium"
               >
                 Services
               </Link>
-              <Link href="#how-it-works" className="text-white hover:text-gray-300 transition-colors text-sm font-medium">
+              <Link href="#how-it-works" className="dark:text-white hover:text-gray-300 transition-colors text-sm font-medium">
                 How It Works
               </Link>
-              <Link href="#about" className="text-white hover:text-gray-300 transition-colors text-sm font-medium">
+              <Link href="#about" className="dark:text-white hover:text-gray-300 transition-colors text-sm font-medium">
                 About
               </Link>
             </div>
 
             {/* CTA Button */}
-            <Button className="bg-white text-gray-900 hover:bg-gray-100 rounded-full px-6 py-2 text-sm font-medium">
+            <Button className="dark:bg-white dark:text-gray-900 hover:bg-gray-100 rounded-full px-6 py-2 text-sm font-medium">
               Get Started
             </Button>
 
@@ -48,7 +47,7 @@ const navbar = () => {
         <div className="flex items-center justify-around py-4 px-6">
           <Link
             href="#features"
-            className="flex flex-col items-center space-y-1 text-gray-600 hover:text-primary transition-colors"
+            className="flex flex-col items-center space-y-1 dark:text-gray-600 hover:text-primary transition-colors"
           >
             <PackageSearch className="h-6 w-6" />
             <span className="text-xs font-medium">Features</span>
