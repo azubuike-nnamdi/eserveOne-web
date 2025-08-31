@@ -37,27 +37,27 @@ const features = [
 const serviceCategories = [
   {
     icon: Scissors,
-    title: "Beauty & Personal Care",
+    title: "Beauty & Personal care",
     description: "Hair styling, nail care, makeup artistry",
-    color: "bg-pink-50 text-pink-600"
+    color: " text-black"
   },
   {
     icon: Heart,
     title: "Health & Wellness",
     description: "Massage therapy, veterinary services",
-    color: "bg-green-50 text-green-600"
+    color: " text-black"
   },
   {
     icon: Home,
     title: "Home Services",
     description: "Electricians, plumbers, carpenters, painters",
-    color: "bg-blue-50 text-blue-600"
+    color: " text-black"
   },
   {
     icon: Car,
     title: "Automotive",
     description: "Car mechanics and maintenance services",
-    color: "bg-orange-50 text-orange-600"
+    color: " text-black"
   }
 ];
 
