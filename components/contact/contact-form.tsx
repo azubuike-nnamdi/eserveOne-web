@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
-import { Mail, Phone, Send, User } from "lucide-react";
+import { Mail, Send, User } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -35,16 +35,34 @@ export function ContactForm() {
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-    console.log("Form data:", data);
-    setSubmitSuccess(true);
-    setIsSubmitting(false);
-    reset();
+      const result = await response.json();
 
-    // Reset success message after 3 seconds
-    setTimeout(() => setSubmitSuccess(false), 3000);
+      if (response.ok) {
+        console.log("Form submitted successfully:", result);
+        setSubmitSuccess(true);
+        reset();
+      } else {
+        console.error("Form submission failed:", result);
+        // You can add error handling here if needed
+        alert(`Submission failed: ${result.error || 'Unknown error'}`);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert('Failed to submit form. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+      // Reset success message after 3 seconds
+      setTimeout(() => setSubmitSuccess(false), 3000);
+    }
   };
 
   const containerVariants = {
@@ -83,11 +101,10 @@ export function ContactForm() {
             >
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-6">
-                  Reach out to us
+                  We&apos;d love to hear from you!
                 </h3>
                 <p className="text-muted-foreground mb-8">
-                  We&apos;re here to help and answer any questions you might have.
-                  We look forward to hearing from you.
+                  Whether you&apos;re a customer with questions, a service provider looking to join, or a partner interested in working with us, our team is here to help.
                 </p>
               </div>
 
@@ -98,44 +115,63 @@ export function ContactForm() {
                   transition={{ duration: 0.2 }}
                 >
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <Phone className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground">Phone</p>
-                    <Link href={"tel:15551234567"}>
-                      <p className="text-muted-foreground">+1 (555) 123 4567</p>
-                    </Link>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  className="flex items-center space-x-4 group"
-                  whileHover={{ x: 5 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium text-foreground">Email</p>
-                    <Link href={"mailto:contact@eservone.com"}> <p className="text-muted-foreground">contact@eservone.com</p>
+                    <p className="font-medium text-foreground">📧 Email Us</p>
+                    <Link href={"mailto:contact@eservone.onmicrosoft.com"}>
+                      <p className="text-muted-foreground hover:text-primary transition-colors">
+                        contact@eservone.onmicrosoft.com
+                      </p>
                     </Link>
                   </div>
                 </motion.div>
               </div>
 
-              {/* Additional Info */}
+              {/* How We Can Help */}
               <motion.div
                 className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                <h4 className="font-semibold text-foreground mb-3">Business Hours</h4>
-                <p className="text-sm text-muted-foreground">
-                  Monday - Friday: 9:00 AM - 6:00 PM<br />
-                  Saturday: 10:00 AM - 4:00 PM<br />
-                  Sunday: Closed
-                </p>
+                <h4 className="font-semibold text-foreground mb-4">How We Can Help</h4>
+                <div className="space-y-3">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="font-medium text-foreground text-sm">Customer Support</p>
+                      <p className="text-xs text-muted-foreground">Need help with your booking or account?</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="font-medium text-foreground text-sm">Provider Support</p>
+                      <p className="text-xs text-muted-foreground">Interested in offering your services on EservOne?</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="font-medium text-foreground text-sm">Partnerships & Media</p>
+                      <p className="text-xs text-muted-foreground">Let&apos;s talk about collaboration opportunities.</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Response Time */}
+              <motion.div
+                className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-2xl p-4"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <p className="text-sm font-medium text-green-800 dark:text-green-200">
+                    We aim to respond to all inquiries within 24–48 hours.
+                  </p>
+                </div>
               </motion.div>
             </motion.div>
 
