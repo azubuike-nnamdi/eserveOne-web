@@ -1,6 +1,6 @@
 "use client";
 
-import { Home, Info, Search, Users } from 'lucide-react';
+import { Factory, Home, Info, Search, Users } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -34,6 +34,9 @@ const Navbar = () => {
                 Services
               </AnimatedLink>}
 
+              <AnimatedLink href="/careers" className="dark:text-white  transition-colors text-sm font-medium">
+                Careers
+              </AnimatedLink>
               <AnimatedLink href="/about" className="dark:text-white  transition-colors text-sm font-medium">
                 About Us
               </AnimatedLink>
@@ -74,6 +77,13 @@ const Navbar = () => {
           >
             <Users className="h-6 w-6" />
             <span className="text-xs font-medium">About</span>
+          </Link>
+          <Link
+            href="/career"
+            className="flex flex-col items-center space-y-1 text-gray-600 hover:text-primary transition-colors"
+          >
+            <Factory className="h-6 w-6" />
+            <span className="text-xs font-medium">Careers</span>
           </Link>
           <Link
             href="/contact-us"

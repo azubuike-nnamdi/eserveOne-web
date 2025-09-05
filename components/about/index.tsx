@@ -11,7 +11,7 @@ export function AboutPage() {
       <AnimatePresence mode="wait">
         <WavyBackground className="max-w-4xl mx-auto pb-40">
           <motion.p
-            className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center md:mt-36"
+            className="text-base md:text-lg  text-white font-normal inter-var text-center md:mt-48 mt-36"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -115,10 +115,10 @@ export function AboutPage() {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
-                  <p className="text-base md:text-lg text-gray-300 dark:text-gray-400">
+                  <p className="text-base md:text-lg text-black/40 dark:text-gray-400">
                     At EservOne, we believe that access to trusted, affordable services should be simple and seamless. Our platform connects customers with skilled service providers across multiple industries—making it easier than ever to book the help you need, when you need it.
                   </p>
-                  <p className="text-base md:text-lg text-gray-300 dark:text-gray-400">
+                  <p className="text-base md:text-lg text-black/40 dark:text-gray-400">
                     Founded with a vision to empower service providers and deliver convenience to customers, EservOne bridges the gap between talent and demand. Whether it&apos;s beauty and wellness, home repairs, automotive care, or professional services, our goal is to create a reliable marketplace where quality meets accessibility.
                   </p>
                 </motion.div>
@@ -189,7 +189,7 @@ export function AboutPage() {
                   Our Mission
                 </motion.h3>
                 <motion.p
-                  className="text-base md:text-lg text-gray-300 dark:text-gray-400"
+                  className="text-base md:text-lg text-black/40 dark:text-gray-400"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
@@ -226,7 +226,7 @@ export function AboutPage() {
                   Our Vision
                 </motion.h3>
                 <motion.p
-                  className="text-base md:text-lg text-gray-300 dark:text-gray-400"
+                  className="text-base md:text-lg text-black/40 dark:text-gray-400"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
@@ -266,7 +266,7 @@ export function AboutPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <motion.p
-                className="text-sm md:text-base text-gray-400 dark:text-gray-500 mb-4"
+                className="text-sm md:text-base text-black/40 dark:text-gray-500 mb-4"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
@@ -284,7 +284,7 @@ export function AboutPage() {
                 Our Benefits We Can Offer to You, Dear Clients
               </motion.h3>
               <motion.p
-                className="text-base md:text-lg text-gray-300 dark:text-gray-400 max-w-lg mx-auto"
+                className="text-base md:text-lg text-black/40 dark:text-gray-400 max-w-lg mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -334,7 +334,7 @@ export function AboutPage() {
 
               {/* Featured Card */}
               <motion.div
-                className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg"
+                className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm"
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -30 }}
@@ -386,7 +386,7 @@ export function AboutPage() {
               ].map((benefit, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg text-center"
+                  className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm text-center"
                   initial={{ opacity: 0, y: 20, scale: 0.9 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -20, scale: 0.9 }}
