@@ -92,7 +92,7 @@ export default function NewHero() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onKeyPress={handleKeyPress}
-            className="w-full pl-12 pr-32 py-4 text-lg rounded-full border-0 focus:ring-2 focus:ring-orange-500 focus:outline-none bg-white/95 backdrop-blur-sm transition-all duration-200 dark:placeholder:text-gray-400"
+            className="w-full pl-12 pr-32 py-4 text-lg rounded-full border-0 focus:ring-2 focus:ring-orange-500 focus:outline-none bg-white/95 backdrop-blur-sm transition-all duration-200 dark:placeholder:text-gray-400 dark:text-black"
           />
           <motion.div
             whileHover={{ scale: 1.05 }}
