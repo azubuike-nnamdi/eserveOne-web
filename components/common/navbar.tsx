@@ -79,7 +79,7 @@ const Navbar = () => {
             <span className="text-xs font-medium">About</span>
           </Link>
           <Link
-            href="/career"
+            href="/careers"
             className="flex flex-col items-center space-y-1 text-gray-600 hover:text-primary transition-colors"
           >
             <Factory className="h-6 w-6" />
