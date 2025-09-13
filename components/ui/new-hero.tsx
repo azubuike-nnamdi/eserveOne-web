@@ -1,25 +1,22 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { Search } from 'lucide-react';
-import { useState } from 'react';
 
 export default function NewHero() {
-  const [searchQuery, setSearchQuery] = useState('');
+  // const [searchQuery, setSearchQuery] = useState('');
 
-  const handleSearch = () => {
-    if (searchQuery.trim()) {
-      // Handle search functionality here
-      console.log('Searching for:', searchQuery);
-    }
-  };
+  // const handleSearch = () => {
+  //   if (searchQuery.trim()) {
+  //     // Handle search functionality here
+  //     console.log('Searching for:', searchQuery);
+  //   }
+  // };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      handleSearch();
-    }
-  };
+  // const handleKeyPress = (e: React.KeyboardEvent) => {
+  //   if (e.key === 'Enter') {
+  //     handleSearch();
+  //   }
+  // };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -70,7 +67,7 @@ export default function NewHero() {
         </motion.p>
 
         {/* Search Bar */}
-        <motion.div
+        {/* <motion.div
           className="relative max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 30, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -105,7 +102,7 @@ export default function NewHero() {
               Search
             </Button>
           </motion.div>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </section>
   );
