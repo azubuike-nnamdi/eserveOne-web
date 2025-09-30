@@ -1,11 +1,11 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { mobileImage } from '@/config/images';
+import { appleStoreIcon, googlePlayStoreIcon, mobileImage } from '@/config/images';
 import { buttonTransition, buttonVariants } from '@/lib/animations';
 import { motion } from 'framer-motion';
-import { Download } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Spotlight } from '../ui/spotlight';
 
 const NowAvailable = () => {
@@ -72,10 +72,25 @@ const NowAvailable = () => {
                 whileTap="tap"
                 transition={buttonTransition}
               >
-                <Button size="lg" className="w-full sm:w-auto">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download App
-                </Button>
+                <Link
+                  href="https://play.google.com/store/apps/details?id=com.nnamdi.azubuike.eservone"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto px-5 py-5 cursor-pointer"
+                  >
+                    <Image
+                      src={googlePlayStoreIcon}
+                      alt="Google Play Store"
+                      width={30}
+                      height={30}
+                      className="mr-2"
+                    />
+                    Download on Google Store
+                  </Button>
+                </Link>
               </motion.div>
               <motion.div
                 variants={buttonVariants}
@@ -83,8 +98,26 @@ const NowAvailable = () => {
                 whileTap="tap"
                 transition={buttonTransition}
               >
-                <Button size="lg" variant="link" className="px-8 py-5 bg-transparent border cursor-pointer w-full sm:w-auto">
-                  Browse Services
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="w-full sm:w-auto cursor-pointer px-5 py-5"
+                  asChild
+                >
+                  <Link
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src={appleStoreIcon}
+                      alt="Apple App Store"
+                      width={30}
+                      height={30}
+                      className="mr-2"
+                    />
+                    Download on Apple Store
+                  </Link>
                 </Button>
               </motion.div>
             </motion.div>

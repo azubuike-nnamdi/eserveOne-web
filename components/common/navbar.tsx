@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatedLink } from '../ui/animated-link';
-import { Button } from '../ui/button';
 
 const Navbar = () => {
 
@@ -24,31 +23,31 @@ const Navbar = () => {
 
             {/* Navigation Links */}
             <div className="flex items-center space-x-6">
-              <AnimatedLink href="/" className="dark:text-white  transition-colors text-sm font-medium">
+              <AnimatedLink href="/" className="dark:text-white  transition-colors text-xs font-medium">
                 Home
               </AnimatedLink>
               {pathname === "/" && <AnimatedLink
                 href="#services"
-                className="dark:text-white  transition-colors text-sm font-medium"
+                className="dark:text-white  transition-colors text-xs font-medium"
               >
                 Services
               </AnimatedLink>}
 
-              <AnimatedLink href="/careers" className="dark:text-white  transition-colors text-sm font-medium">
+              <AnimatedLink href="/careers" className="dark:text-white  transition-colors text-xs font-medium">
                 Careers
               </AnimatedLink>
-              <AnimatedLink href="/about" className="dark:text-white  transition-colors text-sm font-medium">
+              <AnimatedLink href="/about" className="dark:text-white  transition-colors text-xs font-medium">
                 About Us
               </AnimatedLink>
-              <AnimatedLink href="/contact-us" className="dark:text-white  transition-colors text-sm font-medium">
+              <AnimatedLink href="/contact-us" className="dark:text-white  transition-colors text-xs font-medium">
                 Contact Us
               </AnimatedLink>
             </div>
 
             {/* CTA Button */}
-            <Button className="dark:bg-white dark:text-gray-900 hover:bg-gray-100 rounded-full px-6 py-2 text-sm font-medium">
+            {/* <Button className="dark:bg-white dark:text-gray-900 hover:bg-gray-100 rounded-full px-6 py-2 text-sm font-medium">
               Get Started
-            </Button>
+            </Button> */}
 
           </div>
         </nav>

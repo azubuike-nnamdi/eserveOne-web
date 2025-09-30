@@ -1,6 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
-import { Download, Users } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { appleStoreIcon, googlePlayStoreIcon } from "../../config/images";
 import { Button } from "../ui/button";
 
 export default function GetStarted() {
@@ -37,21 +39,56 @@ export default function GetStarted() {
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.2 }}
           >
-            <Button size="lg" className="w-full sm:w-auto">
-              <Download className="w-4 h-4 mr-2" />
-              Download for Free
-            </Button>
+            <Link
+              href="https://play.google.com/store/apps/details?id=com.nnamdi.azubuike.eservone"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                size="lg"
+                className="w-full sm:w-auto px-5 py-5 cursor-pointer"
+
+              >
+
+                <Image
+                  src={googlePlayStoreIcon}
+                  alt="Google Play Store"
+                  width={30}
+                  height={30}
+                  className="mr-2"
+                />
+                Download on Google Store
+              </Button>
+            </Link>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.2 }}
           >
-            <Button variant="outline" size="lg" className="w-full sm:w-auto">
-              <Users className="w-4 h-4 mr-2" />
-              Join as Provider
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full sm:w-auto cursor-pointer px-5 py-5"
+              asChild
+            >
+              <Link
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src={appleStoreIcon}
+                  alt="Apple App Store"
+                  width={30}
+                  height={30}
+                  className="mr-2"
+                />
+                Download on Apple Store
+              </Link>
             </Button>
           </motion.div>
+
         </motion.div>
       </div>
     </section>
